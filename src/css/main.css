@@ -1,0 +1,75 @@
+
+.wrapper {
+    text-align: center;
+    margin-top: 90px;
+  }
+  
+  .h1 {
+    font-size: 90px;
+    color: #333;
+    background-color:rgb(49, 206, 107);
+    border-radius: 40px 40px 40px 40px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  h2 {
+    font-size: 80px;
+    color: #666;
+    margin-top: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+  }
+  
+  img {
+    width: 800px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  /* main.css */
+
+/* Estilo para el contenedor principal del componente */
+.hangman-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo para el párrafo que muestra la palabra a adivinar */
+.hangman-word {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el input de adivinanza */
+.hangman-input {
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* Estilo para el botón de reiniciar el juego */
+.hangman-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Estilo para el párrafo que muestra la cantidad de errores */
+.hangman-error {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #dc3545;
+}
+
+/* Estilo para el párrafo que muestra el mensaje de victoria */
+.hangman-win {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #28a745;
+}
