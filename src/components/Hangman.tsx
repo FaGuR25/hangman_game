@@ -3,9 +3,10 @@ import '../css/main.css';
 
 interface HangmanProps{
     words: string[];
+    nom: string;
 }
 
-const Hangman = ({words}: HangmanProps) => {
+const Hangman = ({words, nom}: HangmanProps) => {
     const [selectedWords, setSelectedWord] = useState(words[0]);
     const [guessedLetters, setGuessedLetters] = useState<String[]>([]);
     const [errorCount, setErrorCount] = useState(0);
@@ -40,19 +41,22 @@ const Hangman = ({words}: HangmanProps) => {
 
     return(
         <div>
-            <p>{displayWord.join('')}</p>
+            <p className='display'>{displayWord.join('')}</p>
            
-            <input maxLength={1} onChange={(e) => handleGuess(e.target.value)} />
+            <input className='input' maxLength={1} onChange={(e) => handleGuess(e.target.value)} />
             {(displayWord.join('') === selectedWords || errorCount > 5 ) && (
-               <button onClick={() => {
+               <button className='SelectNew' onClick={() => {
                 restarGame();
                 selectedWords(words[Math.floor(Math.random() * words.length)]);
             }}>Selected New Word</button>
             )}
-            <p>Cantidad de errores {errorCount}</p>
+            <div className="contenedor">
+            <p className='pista'>La lista trata de {nom}</p>
+            <p className='errores'>Cantidad de errores {errorCount}</p>
             {displayWord.join('') === selectedWords && (
-                <p>You Won in this round</p>
+                <p className='ganar'>You Won in this round</p>
             )}
+            </div>
         </div>
     );
 
