@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 import Welcome from './components/Welcome';
 import Hangman from './components/Hangman';
 
+//listas
 const words = ["apple", "banana", "cherry", "date", "fig", "grape", "kiwi"];
 const nombres = ["ana", "maria", "jose", "jesus", "juan", "luis"];
 const colores = ["blanco", "negro", "verde", "cafe", "azul", "morado"];
 const lenguajes = ["java", "javascript", "html", "css", "php", "python"];
+
+//lista para la pista [hint]
 const listas = [words, nombres, colores, lenguajes];
 
-const listaNombre = ["frutas" ,"nombres", "colores" ,"lenguajes"];
-
-
 function App() {
-  const [start, setStart] = useState(false);
+  const [start, setStart] = useState(false); // Declaramos la variable start y su función para cambiarla
 
-  const handleStartGame = () => {
-    setStart(true);
-  };
-  
   return (
     <div className="App">
-      <Welcome />
-      <Hangman words ={listas[Math.floor(Math.random() * listas.length)]}/>
+      {/* Evaluamos si start es true */}
+      {start ? (
+        <Hangman words={listas[Math.floor(Math.random() * listas.length)]} />
+      ) : (
+        <Welcome onStart={() => setStart(true)} /> 
+      )}
     </div>
   );
 }

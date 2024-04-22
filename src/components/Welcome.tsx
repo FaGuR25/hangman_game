@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import hangman from '../img/hangman.jpg';
 import '../css/main.css';
 
-interface HangmanProps{
-    nom: string;
+interface WelcomeProps {
+  onStart: () => void; // Definimos la interfaz para onStart
 }
 
-
-export default function Welcome() {
-  const [gameStarted, setGameStarted] = useState(false);
-
+export default function Welcome({ onStart }: WelcomeProps) { // Recibimos onStart como prop
   return (
     <>
       <div className="container">
@@ -17,10 +14,10 @@ export default function Welcome() {
           <h1 className="h1">Welcome to Hangman Game!!</h1>
           <h2>Classical Game</h2>
           <img src={hangman} alt="Hangman image" />
-
-          
+          <button className="boton" onClick={onStart}>Start Game</button> 
         </div>
       </div>
     </>
   );
 }
+

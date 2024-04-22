@@ -26,50 +26,15 @@
     height: auto;
     margin-top: 20px;
   }
-
-  /* main.css */
-
-/* Estilo para el contenedor principal del componente */
-.hangman-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Estilo para el párrafo que muestra la palabra a adivinar */
-.hangman-word {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* Estilo para el input de adivinanza */
-.hangman-input {
-  padding: 10px;
-  font-size: 18px;
-}
-
-/* Estilo para el botón de reiniciar el juego */
-.hangman-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-/* Estilo para el párrafo que muestra la cantidad de errores */
-.hangman-error {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #dc3545;
-}
-
-/* Estilo para el párrafo que muestra el mensaje de victoria */
-.hangman-win {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #28a745;
+/* styles.css */
+.boton {
+  background-color: #4CAF50; 
+  border: none; 
+  color: white; 
+  padding: 15px 32px; /* Relleno */
+  text-align: center; /* Alineación de texto al centro */
+  font-size: 40px; 
+  margin: 4px 2px; 
+  cursor: pointer; /* Cambiar cursor a mano cuando se pasa sobre el botón */
+  border-radius: 20px;
 }

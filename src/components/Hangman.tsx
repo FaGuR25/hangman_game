@@ -3,10 +3,9 @@ import '../css/main.css';
 
 interface HangmanProps{
     words: string[];
-    nom: string;
 }
 
-const Hangman = ({words, nom}: HangmanProps) => {
+const Hangman = ({words}: HangmanProps) => {
     const [selectedWords, setSelectedWord] = useState(words[0]);
     const [guessedLetters, setGuessedLetters] = useState<String[]>([]);
     const [errorCount, setErrorCount] = useState(0);
