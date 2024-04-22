@@ -3,9 +3,10 @@ import '../css/main.css';
 
 interface HangmanProps{
     words: string[];
+    nom: string;
 }
 
-const Hangman = ({words}: HangmanProps) => {
+const Hangman = ({words, nom}: HangmanProps) => {
     const [selectedWords, setSelectedWord] = useState(words[0]);
     const [guessedLetters, setGuessedLetters] = useState<String[]>([]);
     const [errorCount, setErrorCount] = useState(0);
@@ -41,6 +42,7 @@ const Hangman = ({words}: HangmanProps) => {
     return(
         <div>
             <p>{displayWord.join('')}</p>
+           
             <input maxLength={1} onChange={(e) => handleGuess(e.target.value)} />
             {(displayWord.join('') === selectedWords || errorCount > 5 ) && (
                <button onClick={() => {

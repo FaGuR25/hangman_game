@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Welcome from './components/Welcome';
 import Hangman from './components/Hangman';
 
@@ -8,18 +8,20 @@ const colores = ["blanco", "negro", "verde", "cafe", "azul", "morado"];
 const lenguajes = ["java", "javascript", "html", "css", "php", "python"];
 const listas = [words, nombres, colores, lenguajes];
 
-function aleatorio(list) {
-  const palabra = Math.floor(Math.random() * list.length);
-  return list[palabra];
-}
+const listaNombre = ["frutas" ,"nombres", "colores" ,"lenguajes"];
+
 
 function App() {
-  const lista = aleatorio(listas);
+  const [start, setStart] = useState(false);
+
+  const handleStartGame = () => {
+    setStart(true);
+  };
+  
   return (
     <div className="App">
-      <Welcome wordsList={lista}/>
-      {"Lenguajes de Programación"}
-      <Hangman words={aleatorio(listas)}/>
+      <Welcome />
+      <Hangman words ={listas[Math.floor(Math.random() * listas.length)]}/>
     </div>
   );
 }
