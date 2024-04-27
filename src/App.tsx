@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Welcome from './components/Welcome';
 import Hangman from './components/Hangman';
 
+
 //listas
 const words = ["apple", "banana", "cherry", "date", "fig", "grape", "kiwi"];
 const nombres = ["ana", "maria", "jose", "jesus", "juan", "luis"];
@@ -18,11 +19,12 @@ function App() {
   const numero = Math.floor(Math.random() * listas.length);
   return (
     <div className="App">
-      
+     
       {start ? (
         <Hangman words={listas[numero]} nom={pistas[numero]} />
       ) : (
         <Welcome onStart={() => setStart(true)} /> 
+        
       )}
     </div>
   );
