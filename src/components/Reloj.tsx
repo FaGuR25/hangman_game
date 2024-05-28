@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react';
 
+interface Props{
+  start: boolean;
+  timeCalback:(time: string) => void;
+}
 
-function Reloj ({ start }: {start: boolean}): React.JSX.Element {
+
+function Reloj ({ start, timeCalback }: Props): React.JSX.Element {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if(start){
     const key = setInterval(() => {
       setCount(prevCount => prevCount + 1);
+      timeCalback(`${count}s`);
     }, 1000);
 
     return () => {
@@ -16,6 +22,7 @@ function Reloj ({ start }: {start: boolean}): React.JSX.Element {
 
     }else{
         setCount(0);
+        timeCalback(`${(count / 60).toFixed(0)} min`);
     };
   }, [start]);
  
