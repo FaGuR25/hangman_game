@@ -62,7 +62,7 @@ const Hangman = ({words, nom}: HangmanProps) => {
             {(displayWord.join('') === selectedWords || errorCount > 5 ) && (
                <button className='SelectNew' onClick={() => {
                 restarGame();
-                selectedWords(words[Math.floor(Math.random() * words.length)]);
+                setSelectedWord(words[Math.floor(Math.random() * words.length)])
             }}>Selected New Word</button>
             )}
             
