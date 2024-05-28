@@ -1,4 +1,4 @@
-import React from "react";
+
 import hangman from "../img/hangman.jpg";
 import "../css/main.css";
 
