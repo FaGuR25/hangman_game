@@ -55,7 +55,7 @@ const Hangman = ({words, nom}: HangmanProps) => {
            
             
             <img className='imagen' src={imagenes[errorCount]} alt="imagen" />
-            <Reloj start={displayWord.join("") !== selectedWords && errorCount < 6} />
+            <Reloj timeCalback={()=>{}} start={displayWord.join("") !== selectedWords && errorCount < 6} />
             <p className='display'>{displayWord.join('')}</p>
             <input className='input' maxLength={1} onChange={(e) => handleGuess(e.target.value)} />
             
