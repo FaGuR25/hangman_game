@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
 import Welcome from './components/Welcome';
 import Hangman from './components/Hangman';
+import { useState } from 'react';
 
 
 //listas
